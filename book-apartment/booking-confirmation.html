@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Booking Confirmation Section  -->
+    <section>
+      <div class="container">
+        <h1 class="new-listing-heading primary-hd">Booking Confirmation</h1>
+        <div class="row">
+          <div class="col-lg-6 pe-lg-3" style="font-size: 18px">
+            <h3 style="font-size: 30px; font-weight: 600">Guest Details</h3>
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-top: 16px"
+            >
+              <span>Name</span>
+              <span style="font-weight: 600">Ubaid Ahmed</span>
+            </div>
+
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-top: 16px"
+            >
+              <span>No. of guests</span>
+              <span style="font-weight: 600">3 Adults, 2 Kids</span>
+            </div>
+
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-top: 16px"
+            >
+              <span>Stay period</span>
+              <span style="font-weight: 600">12 Dec 2023 - 14 Dec 2023</span>
+            </div>
+
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-top: 16px"
+            >
+              <span>ID Card Verification</span>
+              <span style="font-weight: 600"
+                ><img src="../assets/icons/check-circle.svg" alt="" />
+
+                Verified</span
+              >
+            </div>
+
+            <h3
+              style="
+                font-size: 30px;
+                font-weight: 600;
+                margin-top: 40px;
+                margin-bottom: 16px;
+              "
+            >
+              Accommodation Limit
+            </h3>
+
+            <div
+              class="d-flex justify-content-between align-items-center"
+              style="margin-top: 16px"
+            >
+              <span>No. of people per room</span>
+              <div class="col-6 d-flex justify-content-end">
+                <div class="counter">
+                  <div class="counter-btn" onclick="decrement('adultsCount')">
+                    <img src="../assets/images/minus.png" alt="" />
+                  </div>
+                  <input
+                    type="number"
+                    class="counter-input text-center"
+                    id="adultsCount"
+                    value="0"
+                    readonly
+                  />
+                  <div class="counter-btn" onclick="increment('adultsCount')">
+                    <img src="../assets/images/plus.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <hr style="margin-top: 27px" /> -->
+
+            <hr class="d-lg-none" style="margin-top: 54px" />
+          </div>
+          <div
+            class="col-lg-6 mob-view-spacing ps-lg-3"
+            style="margin-top: 10px"
+          >
+            <div
+              class="card-wrapper"
+              style="
+                box-shadow: var(--bs-box-shadow-all-sides);
+                border: 1px solid transparent;
+              "
+            >
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <img
+                    src="../assets/images/cover.png"
+                    style="
+                      height: 141px;
+                      width: 100%;
+                      object-fit: cover;
+                      border-radius: 10px;
+                    "
+                    alt="Apartment picture"
+                  />
+                </div>
+                <div class="col-6">
+                  <h3 style="font-size: 18px; font-weight: 600">Apartment</h3>
+                  <h3 style="font-size: 20px; font-weight: 600">
+                    Salam Tower Apartment
+                  </h3>
+                  <span style="font-size: 12px">* 4.8 1k+ reviews</span>
+                </div>
+              </div>
+              <h3 style="font-size: 22px; font-weight: 600; margin-top: 30px">
+                Bill Summary
+              </h3>
+              <div style="font-size: 18">
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Per Night Rate</span>
+                  <span style="font-weight: 600">PKR 5,000</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Government Tax</span>
+                  <span style="font-weight: 600">PKR 750</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Fees</span>
+                  <span style="font-weight: 600">PKR 50</span>
+                </div>
+                <hr />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-center"
+                style="font-size: 20px"
+              >
+                <span style="font-weight: 500">Sub Total</span>
+                <span style="font-weight: 600">PKR 5,800</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <hr />
+            <p style="font-size: 15px; margin-top: 30px">
+              By selecting the button below, I agree to the
+              <span style="font-weight: 600">
+                Terms & Conditions, Privacy Policy
+              </span>
+              and
+              <span style="font-weight: 600"> Host Terms & Conditions. </span>
+            </p>
+
+            <div class="mb-3">
+              <a
+                href="booking-accepted.html"
+                type="button"
+                class="primary-button"
+                style="padding: 25px 0; border-radius: 12px; margin-top: 40px"
+              >
+                Confirm Booking
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer>
+      <div class="container">
+        <hr />
+        <div class="footer-end">
+          <div
+            class="row align-items-center justify-content-center justify-content-md-between"
+          >
+            <div class="col-md-6 p-2 m-0">
+              <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+            </div>
+            <div class="col-md-6 p-2 m-0 text-md-end">
+              <a href="">Terms & Condition</a>
+              <a class="m-lg-3" href="">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

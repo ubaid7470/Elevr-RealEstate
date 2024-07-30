@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Elevr - New Listing</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <!-- for spacing -->
+          </div>
+          <div class="col-lg-6">
+            <h1 class="new-listing-heading primary-hd" style="margin-bottom: 0">
+              Choose who to welcome as your first guest
+            </h1>
+            <span class="instructions"
+              >After your first guest, anyone can book your place</span
+            >
+            <div class="loc-card" style="margin: 40px 0 20px 0">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <h4>Any Evelr User</h4>
+                  <p>
+                    Get reservation faster when you welcome anyone from Everly
+                    community.
+                  </p>
+                </div>
+
+                <div
+                  class="check-guest check-guest-active"
+                  onclick="chooseGuestActive(this)"
+                >
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="loc-card" style="margin-bottom: 20px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <h4>Any Experienced Guest</h4>
+                  <p>
+                    Welcome someone with a good track record on Evelry who can
+                    offer tips to a great lister.
+                  </p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <!-- for spacing -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Save/Exit and Continue Buttons -->
+    <section class="save-cont-btns-sec">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-sm-6 col-md-5 col-lg-4 col-xl-3 d-flex justify-content-start"
+          >
+            <a href="" class="save-exit-btn">Save & Exit</a>
+          </div>
+          <div
+            class="col-sm-6 col-md-5 col-lg-4 col-xl-3 d-flex justify-content-end"
+          >
+            <a href="./set-price.html" class="continue-btn">Continue</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer>
+      <div class="container">
+        <hr />
+        <div class="footer-end">
+          <div
+            class="row align-items-center justify-content-center justify-content-md-between"
+          >
+            <div class="col-md-6 p-2 m-0">
+              <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+            </div>
+            <div class="col-md-6 p-2 m-0 text-md-end">
+              <a href="">Terms & Condition</a>
+              <a class="m-lg-3" href="">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

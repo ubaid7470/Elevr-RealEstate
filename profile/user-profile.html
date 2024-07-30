@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Report UseProfile Step-1 Model  -->
+    <div
+      class="modal fade"
+      id="reportProfile"
+      tabindex="-1"
+      aria-labelledby="reportProfile"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">What’s happening</h3>
+          <p class="modal-text">This will be only shared with Evelr.</p>
+          <div class="modal-body">
+            <div class="loc-card" style="margin-top: 15px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <p style="font-size: 20px">The host is unresponsive</p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="loc-card" style="margin-top: 15px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <p style="font-size: 20px">
+                    They collect fees outside of Evelr
+                  </p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="loc-card" style="margin-top: 15px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <p style="font-size: 20px">Host is asking me to cancel</p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="loc-card" style="margin-top: 15px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <p style="font-size: 20px">Misrepresentation of Listing</p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+            <div class="loc-card" style="margin-top: 15px">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <p style="font-size: 20px">Something else</p>
+                </div>
+
+                <div class="check-guest" onclick="chooseGuestActive(this)">
+                  <img src="../assets/images/check.png" alt="..." />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary mt-3 mb-2"
+            data-bs-toggle="modal"
+            data-bs-target="#reportProfileStep2"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report UseProfile Step-2 Model  -->
+    <div
+      class="modal fade"
+      id="reportProfileStep2"
+      tabindex="-1"
+      aria-labelledby="reportProfileStep2"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">What’s happening</h3>
+          <p class="modal-text">This will be only shared with Evelr.</p>
+          <div class="modal-body">
+            <textarea
+              class="form-control border border-black"
+              placeholder="What’s the issue?"
+              id="floatingTextarea"
+              style="resize: none; height: 300px"
+            ></textarea>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary mt-3 mb-2"
+            data-bs-toggle="modal"
+            data-bs-target="#reportProfileStep3"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report UseProfile Step-3 Model  -->
+    <div
+      class="modal fade"
+      id="reportProfileStep3"
+      tabindex="-1"
+      aria-labelledby="reportProfileStep3"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">Additional Details</h3>
+          <p class="modal-text">This will be only shared with Evelr.</p>
+          <div class="modal-body">
+            Here images upload functionality will be added Attach evidence (if
+            any)
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary mt-3 mb-2"
+            data-bs-toggle="modal"
+            data-bs-target="#reportProfileStep4"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Report UseProfile Step-4 Model  -->
+    <div
+      class="modal fade"
+      id="reportProfileStep4"
+      tabindex="-1"
+      aria-labelledby="reportProfileStep4"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+          <img
+            src="../assets/images/round-check.png"
+            height="100"
+            width="100"
+            class="mx-auto mt-3"
+            alt=""
+          />
+          <h3 style="font-size: 30px; font-weight: 600">Report Submitted</h3>
+          <p class="modal-text">
+            Thank you for reporting this user. Your feedback helps us maintain a
+            trustworthy community. We'll review your report promptly.
+          </p>
+          <div class="modal-body">
+            <p>
+              <b>Note:</b> Please note that false reporting may lead to
+              consequences. We appreciate your honesty and trust in our
+              platform.
+            </p>
+            <p>
+              If you require immediate assistance or have further concerns, you
+              can contact our <b>Support Team</b>
+            </p>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary mt-3 mb-2"
+            data-bs-toggle="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../notifications/notification.html"
+                  >Notifications</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wishlists</a>
+              </li>
+            </ul>
+            <div class="d-flex flex-row justify-content-between">
+              <a
+                class="navbar-login-btn"
+                href="../new-listing/place-category.html"
+                type="button"
+              >
+                Switch to listing
+              </a>
+
+              <div class="dropdown">
+                <a href="../profile/user-profile.html">
+                  <img
+                    style="height: 56px; width: 56px"
+                    src="../assets/images/user.png"
+                    alt="user profile image"
+                  />
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="dropdownMenuButton"
+                  style="
+                    font-size: 16px;
+                    box-shadow: var(--bs-box-shadow-all-sides) !important;
+                  "
+                >
+                  <li class="mt-2">
+                    <a
+                      class="dropdown-item d-flex align-items-center justify-content-between"
+                      href="#"
+                    >
+                      <span
+                        ><img
+                          style="height: 56px; width: 56px"
+                          src="../assets/images/user.png"
+                          alt="user profile image" /></span
+                      ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>My Reservations</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Personal Information</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Account Settings</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Gift Cards</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Help Center</span></a
+                    >
+                  </li>
+                  <li class="mt-3 mb-2">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span
+                        style="color: var(--bs-primary-color); font-weight: 600"
+                        >Log Out</span
+                      ></a
+                    >
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-start d-lg-none"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a class="navbar-brand" id="offcanvasNavbarLabel" href="#">
+                <img
+                  src="../assets/images/eve-logo-cropped.gif"
+                  alt="evelr logo"
+                />
+              </a>
+
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Wishlist</a>
+                </li>
+                {{ This below switch to listing and user menu} will be removed
+                if user is not logged in }}
+                <div>
+                  <a
+                    style="
+                      width: 50%;
+                      padding: 8px 0;
+                      color: var(--bs-primary-color);
+                      font-weight: 600;
+                      font-size: 18px;
+                    "
+                    type="button"
+                  >
+                    Switch to listing
+                  </a>
+
+                  <div class="dropdown mt-sm-2">
+                    <a
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <img
+                        class="rounded-circle"
+                        style="
+                          height: 56px;
+                          width: 56px;
+                          border: 3px solid var(--bs-primary-color);
+                        "
+                        src="../assets/images/user.png"
+                        alt="user profile image"
+                      />
+
+                      <span
+                        style="
+                          color: var(--bs-primary-color);
+                          font-weight: 600;
+                          font-size: 18px;
+                          margin-left: 5px;
+                        "
+                        >User Menu</span
+                      >
+                    </a>
+                    <div
+                      class="dropdown-menu dropdown-menu-right"
+                      aria-labelledby="dropdownMenuButton"
+                      style="font-size: 16px"
+                    >
+                      <li class="mt-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                        >
+                          <span
+                            ><img
+                              style="height: 56px; width: 56px"
+                              src="../assets/images/user.png"
+                              alt="user profile image" /></span
+                          ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>My Reservations</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Personal Information</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Account Settings</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Gift Cards</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Help Center</span></a
+                        >
+                      </li>
+                      <li class="mt-3 mb-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span
+                            style="
+                              color: var(--bs-primary-color);
+                              font-weight: 600;
+                            "
+                            >Log Out</span
+                          ></a
+                        >
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                {{ This below buttons will be removed if user is logged in }}
+                <div class="row justify-content-between mt-2">
+                  <div class="col-6">
+                    <a
+                      class="navbar-login-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#login-modal"
+                    >
+                      Log In
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a
+                      class="navbar-signup-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#signup-modal"
+                    >
+                      Sign Up
+                    </a>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--  profile Section  -->
+    <section class="profile mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-12">
+            <div class="row">
+              <div class="profile-bg"></div>
+              <div class="col-lg-5 col-md-6 col-12">
+                <div class="d-flex">
+                  <img src="../assets/images/profile.png" alt="" />
+                  <div class="d-flex flex-column mt-4">
+                    <h2><b>Ravi Shas</b></h2>
+                    <h5>Host</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 offset-lg-2 col-md-6 col-12">
+                <div
+                  class="custom-card d-flex justify-content-between rating-review"
+                >
+                  <div>
+                    <h6>Reviews<span>1.9k+</span></h6>
+                  </div>
+                  <div>
+                    <h6>Rating<span>4.9</span></h6>
+                  </div>
+                  <div>
+                    <h6>Listings<span>13</span></h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--  profile Section  -->
+    <section class="login-security">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="custom-card my-4 py-3">
+              <h4>About me</h4>
+              <p>
+                As a real estate professional with a keen eye for architecture
+                and design, I'm equally passionate about movies, gaming, and
+                creating sustainable living spaces. Guiding clients through the
+                real estate landscape, I combine a love for entertainment and
+                innovative housing to curate tailored solutions that match your
+                lifestyle. Let's explore properties that resonate with your
+                interests, blending comfort and style for your perfect home.
+              </p>
+              <ul>
+                <li>
+                  <img class="me-3" src="../assets/images/Vector.png" alt="" />
+                  My work: Real Estate & Architecture
+                </li>
+                <li>
+                  <img
+                    class="me-3"
+                    src="../assets/images/Vector-1.png"
+                    alt=""
+                  />
+                  Lives in Karachi, Sindh
+                </li>
+                <li>
+                  <img
+                    class="me-3"
+                    src="../assets/images/Vector-2.png"
+                    alt=""
+                  />
+                  I speak: English and Urdu
+                </li>
+                <li>
+                  <img
+                    class="me-3"
+                    src="../assets/images/Group 72.png"
+                    alt=""
+                  />
+                  Born in 1995
+                </li>
+              </ul>
+            </div>
+            <a
+              class="reportprofile"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#reportProfile"
+              ><img
+                class="me-3"
+                src="../assets/images/Vector-3.png"
+                alt=""
+              />Report this profile</a
+            >
+          </div>
+          <div class="col-lg-8">
+            <ul
+              class="nav nav-tabs mb-3 justify-content-center"
+              id="myTab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="listings-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#listings"
+                  type="button"
+                  role="tab"
+                  aria-controls="listings"
+                  aria-selected="true"
+                >
+                  Listings
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="reviews-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#reviews"
+                  type="button"
+                  role="tab"
+                  aria-controls="reviews"
+                  aria-selected="false"
+                >
+                  Reviews
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="experiences-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#experiences"
+                  type="button"
+                  role="tab"
+                  aria-controls="experiences"
+                  aria-selected="false"
+                >
+                  Experiences
+                </button>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="listings"
+                role="tabpanel"
+                aria-labelledby="listings"
+              >
+                <div class="row">
+                  <div class="col-md-6 col-12 mb-4">
+                    <div class="card">
+                      <div style="height: 100%; overflow: hidden">
+                        <img
+                          src="../assets/images/listing.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                      </div>
+                      <div
+                        class="favorite-wrapper active-favorite"
+                        onclick="toggleActiveFavorite(this)"
+                      >
+                        <img
+                          class="favorite-icon"
+                          src="../assets/images/favorite-icon.png"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="card-body position-relative">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-10">
+                              <p class="price card-text">Rs 5k per night</p>
+                              <h5 class="title card-title">
+                                Salam Towers Apartment
+                              </h5>
+                              <p class="location card-text">
+                                Jamia Millia, Malir, Karachi
+                              </p>
+                            </div>
+                            <div class="col-2">
+                              <div class="rate-wrapper">
+                                <img
+                                  class="rate-icon"
+                                  style="
+                                    filter: brightness(0) saturate(100%)
+                                      invert(59%) sepia(100%) saturate(435%)
+                                      hue-rotate(0deg) brightness(103%)
+                                      contrast(106%);
+                                  "
+                                  src="../assets/icons/star-fill.svg"
+                                />
+                                <span>1k+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12 mb-4">
+                    <div class="card">
+                      <div style="height: 100%; overflow: hidden">
+                        <img
+                          src="../assets/images/listing.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                      </div>
+                      <div
+                        class="favorite-wrapper active-favorite"
+                        onclick="toggleActiveFavorite(this)"
+                      >
+                        <img
+                          class="favorite-icon"
+                          src="../assets/images/favorite-icon.png"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="card-body position-relative">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-10">
+                              <p class="price card-text">Rs 5k per night</p>
+                              <h5 class="title card-title">
+                                Salam Towers Apartment
+                              </h5>
+                              <p class="location card-text">
+                                Jamia Millia, Malir, Karachi
+                              </p>
+                            </div>
+                            <div class="col-2">
+                              <div class="rate-wrapper">
+                                <img
+                                  class="rate-icon"
+                                  style="
+                                    filter: brightness(0) saturate(100%)
+                                      invert(59%) sepia(100%) saturate(435%)
+                                      hue-rotate(0deg) brightness(103%)
+                                      contrast(106%);
+                                  "
+                                  src="../assets/icons/star-fill.svg"
+                                />
+                                <span>1k+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12 mb-4">
+                    <div class="card">
+                      <div style="height: 100%; overflow: hidden">
+                        <img
+                          src="../assets/images/listing.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                      </div>
+                      <div
+                        class="favorite-wrapper active-favorite"
+                        onclick="toggleActiveFavorite(this)"
+                      >
+                        <img
+                          class="favorite-icon"
+                          src="../assets/images/favorite-icon.png"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="card-body position-relative">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-10">
+                              <p class="price card-text">Rs 5k per night</p>
+                              <h5 class="title card-title">
+                                Salam Towers Apartment
+                              </h5>
+                              <p class="location card-text">
+                                Jamia Millia, Malir, Karachi
+                              </p>
+                            </div>
+                            <div class="col-2">
+                              <div class="rate-wrapper">
+                                <img
+                                  class="rate-icon"
+                                  style="
+                                    filter: brightness(0) saturate(100%)
+                                      invert(59%) sepia(100%) saturate(435%)
+                                      hue-rotate(0deg) brightness(103%)
+                                      contrast(106%);
+                                  "
+                                  src="../assets/icons/star-fill.svg"
+                                />
+                                <span>1k+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-12 mb-4">
+                    <div class="card">
+                      <div style="height: 100%; overflow: hidden">
+                        <img
+                          src="../assets/images/listing.jpg"
+                          class="card-img-top"
+                          alt="..."
+                        />
+                      </div>
+                      <div
+                        class="favorite-wrapper active-favorite"
+                        onclick="toggleActiveFavorite(this)"
+                      >
+                        <img
+                          class="favorite-icon"
+                          src="../assets/images/favorite-icon.png"
+                          alt="..."
+                        />
+                      </div>
+                      <div class="card-body position-relative">
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-10">
+                              <p class="price card-text">Rs 5k per night</p>
+                              <h5 class="title card-title">
+                                Salam Towers Apartment
+                              </h5>
+                              <p class="location card-text">
+                                Jamia Millia, Malir, Karachi
+                              </p>
+                            </div>
+                            <div class="col-2">
+                              <div class="rate-wrapper">
+                                <img
+                                  class="rate-icon"
+                                  style="
+                                    filter: brightness(0) saturate(100%)
+                                      invert(59%) sepia(100%) saturate(435%)
+                                      hue-rotate(0deg) brightness(103%)
+                                      contrast(106%);
+                                  "
+                                  src="../assets/icons/star-fill.svg"
+                                />
+                                <span>1k+</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="reviews"
+                role="tabpanel"
+                aria-labelledby="reviews-tab"
+              >
+                <div class="row justify-content-center">
+                  <div class="col-md-6">
+                    <div
+                      class="card-wrapper"
+                      style="
+                        margin-top: 45px;
+                        border-radius: 14px;
+                        box-shadow: var(--bs-box-shadow-all-sides);
+                        width: 100%;
+                        border: none;
+                      "
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="../assets/images/user.png"
+                          class="rounded-circle shadow-1-strong"
+                          width="48"
+                          height="48"
+                        />
+                        <span
+                          style="margin-left: 10px !important; font-weight: 600"
+                          >Asif</span
+                        >
+                      </div>
+
+                      <p
+                        style="
+                          margin-top: 10px;
+                          height: 100px;
+                          color: var(--bs-text-secondary-color);
+                          overflow: hidden;
+                        "
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quod eos id officiis hic tenetur quae quaerat ad
+                        velit ab hic tenetur. Lorem
+                      </p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                        style="margin-top: 10px"
+                      >
+                        <span
+                          class="list-unstyled d-flex justify-content-center"
+                        >
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                        </span>
+                        <span style="font-size: 12px">Sept 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="card-wrapper"
+                      style="
+                        margin-top: 45px;
+                        border-radius: 14px;
+                        box-shadow: var(--bs-box-shadow-all-sides);
+                        width: 100%;
+                        border: none;
+                      "
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="../assets/images/user.png"
+                          class="rounded-circle shadow-1-strong"
+                          width="48"
+                          height="48"
+                        />
+                        <span
+                          style="margin-left: 10px !important; font-weight: 600"
+                          >Asif</span
+                        >
+                      </div>
+
+                      <p
+                        style="
+                          margin-top: 10px;
+                          height: 100px;
+                          color: var(--bs-text-secondary-color);
+                          overflow: hidden;
+                        "
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quod eos id officiis hic tenetur quae quaerat ad
+                        velit ab hic tenetur. Lorem
+                      </p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                        style="margin-top: 10px"
+                      >
+                        <span
+                          class="list-unstyled d-flex justify-content-center"
+                        >
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                        </span>
+                        <span style="font-size: 12px">Sept 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="card-wrapper"
+                      style="
+                        margin-top: 45px;
+                        border-radius: 14px;
+                        box-shadow: var(--bs-box-shadow-all-sides);
+                        width: 100%;
+                        border: none;
+                      "
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="../assets/images/user.png"
+                          class="rounded-circle shadow-1-strong"
+                          width="48"
+                          height="48"
+                        />
+                        <span
+                          style="margin-left: 10px !important; font-weight: 600"
+                          >Asif</span
+                        >
+                      </div>
+
+                      <p
+                        style="
+                          margin-top: 10px;
+                          height: 100px;
+                          color: var(--bs-text-secondary-color);
+                          overflow: hidden;
+                        "
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quod eos id officiis hic tenetur quae quaerat ad
+                        velit ab hic tenetur. Lorem
+                      </p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                        style="margin-top: 10px"
+                      >
+                        <span
+                          class="list-unstyled d-flex justify-content-center"
+                        >
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                        </span>
+                        <span style="font-size: 12px">Sept 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div
+                      class="card-wrapper"
+                      style="
+                        margin-top: 45px;
+                        border-radius: 14px;
+                        box-shadow: var(--bs-box-shadow-all-sides);
+                        width: 100%;
+                        border: none;
+                      "
+                    >
+                      <div class="d-flex align-items-center">
+                        <img
+                          src="../assets/images/user.png"
+                          class="rounded-circle shadow-1-strong"
+                          width="48"
+                          height="48"
+                        />
+                        <span
+                          style="margin-left: 10px !important; font-weight: 600"
+                          >Asif</span
+                        >
+                      </div>
+
+                      <p
+                        style="
+                          margin-top: 10px;
+                          height: 100px;
+                          color: var(--bs-text-secondary-color);
+                          overflow: hidden;
+                        "
+                      >
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit. Quod eos id officiis hic tenetur quae quaerat ad
+                        velit ab hic tenetur. Lorem
+                      </p>
+                      <div
+                        class="d-flex justify-content-between align-items-center"
+                        style="margin-top: 10px"
+                      >
+                        <span
+                          class="list-unstyled d-flex justify-content-center"
+                        >
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                          <li>
+                            <img
+                              class="rate-icon"
+                              style="
+                                filter: brightness(0) saturate(100%) invert(59%)
+                                  sepia(100%) saturate(435%) hue-rotate(0deg)
+                                  brightness(103%) contrast(106%);
+                              "
+                              src="../assets/icons/star-fill.svg"
+                            />
+                          </li>
+                        </span>
+                        <span style="font-size: 12px">Sept 2024</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade text-center"
+                id="experiences"
+                role="tabpanel"
+                aria-labelledby="experiences-tab"
+              >
+                <span>Nothing to Show</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="../assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="../assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

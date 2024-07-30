@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wishlists</a>
+              </li>
+            </ul>
+            <div class="d-flex flex-row justify-content-between">
+              <a class="navbar-login-btn" type="button"> Switch to listing </a>
+
+              <div class="dropdown">
+                <a
+                  class="rounded-circle"
+                  style="border: 3px solid var(--bs-primary-color)"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    style="height: 56px; width: 56px"
+                    src="../assets/images/user.png"
+                    alt="user profile image"
+                  />
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="dropdownMenuButton"
+                  style="
+                    font-size: 16px;
+                    box-shadow: var(--bs-box-shadow-all-sides) !important;
+                  "
+                >
+                  <li class="mt-2">
+                    <a
+                      class="dropdown-item d-flex align-items-center justify-content-between"
+                      href="#"
+                    >
+                      <span
+                        ><img
+                          style="height: 56px; width: 56px"
+                          src="../assets/images/user.png"
+                          alt="user profile image" /></span
+                      ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>My Reservations</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Personal Information</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Account Settings</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Gift Cards</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Help Center</span></a
+                    >
+                  </li>
+                  <li class="mt-3 mb-2">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span
+                        style="color: var(--bs-primary-color); font-weight: 600"
+                        >Log Out</span
+                      ></a
+                    >
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-start d-lg-none"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a class="navbar-brand" id="offcanvasNavbarLabel" href="#">
+                <img
+                  src="../assets/images/eve-logo-cropped.gif"
+                  alt="evelr logo"
+                />
+              </a>
+
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Wishlist</a>
+                </li>
+                {{ This below switch to listing and user menu} will be removed
+                if user is not logged in }}
+                <div>
+                  <a
+                    style="
+                      width: 50%;
+                      padding: 8px 0;
+                      color: var(--bs-primary-color);
+                      font-weight: 600;
+                      font-size: 18px;
+                    "
+                    type="button"
+                  >
+                    Switch to listing
+                  </a>
+
+                  <div class="dropdown mt-sm-2">
+                    <a
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <img
+                        class="rounded-circle"
+                        style="
+                          height: 56px;
+                          width: 56px;
+                          border: 3px solid var(--bs-primary-color);
+                        "
+                        src="../assets/images/user.png"
+                        alt="user profile image"
+                      />
+
+                      <span
+                        style="
+                          color: var(--bs-primary-color);
+                          font-weight: 600;
+                          font-size: 18px;
+                          margin-left: 5px;
+                        "
+                        >User Menu</span
+                      >
+                    </a>
+                    <div
+                      class="dropdown-menu dropdown-menu-right"
+                      aria-labelledby="dropdownMenuButton"
+                      style="font-size: 16px"
+                    >
+                      <li class="mt-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                        >
+                          <span
+                            ><img
+                              style="height: 56px; width: 56px"
+                              src="../assets/images/user.png"
+                              alt="user profile image" /></span
+                          ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>My Reservations</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Personal Information</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Account Settings</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Gift Cards</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Help Center</span></a
+                        >
+                      </li>
+                      <li class="mt-3 mb-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span
+                            style="
+                              color: var(--bs-primary-color);
+                              font-weight: 600;
+                            "
+                            >Log Out</span
+                          ></a
+                        >
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                {{ This below buttons will be removed if user is logged in }}
+                <div class="row justify-content-between mt-2">
+                  <div class="col-6">
+                    <a
+                      class="navbar-login-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#login-modal"
+                    >
+                      Log In
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a
+                      class="navbar-signup-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#signup-modal"
+                    >
+                      Sign Up
+                    </a>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--  breadcrumb Section  -->
+    <section class="custom-breadcrumb">
+      <div class="container">
+        <div class="new-listing-heading">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Account</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Login & Security
+              </li>
+            </ol>
+          </nav>
+          <h1 class="primary-hd">Login & Security</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--  tabbing Section  -->
+    <section class="login-security">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul
+              class="nav nav-tabs mb-3 justify-content-center"
+              id="myTab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="password-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#password"
+                  type="button"
+                  role="tab"
+                  aria-controls="password"
+                  aria-selected="true"
+                >
+                  Password
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="linked-acc-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#linked-acc"
+                  type="button"
+                  role="tab"
+                  aria-controls="linked-acc"
+                  aria-selected="false"
+                >
+                  Linked Accounts
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="device-his-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#device-his"
+                  type="button"
+                  role="tab"
+                  aria-controls="device-his"
+                  aria-selected="false"
+                >
+                  Device History
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="authentication-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#authentication"
+                  type="button"
+                  role="tab"
+                  aria-controls="authentication"
+                  aria-selected="false"
+                >
+                  Authentication
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="password"
+                role="tabpanel"
+                aria-labelledby="password-tab"
+              >
+                <div class="my-4">
+                  <h2 style="font-weight: 600">Update Password</h2>
+                  <h5>last updated 5 days ago</h5>
+                </div>
+                <form>
+                  <div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="current-password"
+                      placeholder="Current Password"
+                    />
+                    <a
+                      style="font-size: 14px; color: #fc7f53; font-weight: 600"
+                      href="#"
+                      >Forget Password?</a
+                    >
+                  </div>
+                  <div style="margin-top: 20px">
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="new-password"
+                      placeholder="New Password"
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirm-password"
+                      placeholder="Confirm Password"
+                    />
+                  </div>
+                  <div>
+                    <a href="#" class="btn-update">Update</a>
+                  </div>
+                </form>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="linked-acc"
+                role="tabpanel"
+                aria-labelledby="linked-acc-tab"
+              >
+                <div class="my-4">
+                  <h2 style="font-weight: 600">Linked Accounts</h2>
+                </div>
+                <div class="loc-card" style="margin: 20px 0 10px 0">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="pe-3"
+                        src="../assets/images/facebook.png"
+                        alt=""
+                        height="100%"
+                        width="100%"
+                      />
+                      <div class="loc-card-content">
+                        <h3 style="font-size: 22px; font-weight: 600">
+                          Facebook
+                        </h3>
+                        <p>Not Connected</p>
+                      </div>
+                    </div>
+                    <div class="check-link">
+                      <p>Link</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="loc-card" style="margin: 20px 0 10px 0">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="pe-3"
+                        src="../assets/images/google.png"
+                        alt=""
+                        height="100%"
+                        width="100%"
+                      />
+                      <div class="loc-card-content">
+                        <h3 style="font-size: 22px; font-weight: 600">
+                          Google
+                        </h3>
+                        <p>Connected</p>
+                      </div>
+                    </div>
+                    <div class="check-link">
+                      <p>UnLink</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="loc-card" style="margin: 20px 0 10px 0">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="pe-3"
+                        src="../assets/images/linkedin.png"
+                        alt=""
+                        height="100%"
+                        width="100%"
+                      />
+                      <div class="loc-card-content">
+                        <h3 style="font-size: 22px; font-weight: 600">
+                          Linkedin
+                        </h3>
+                        <p>Not Connected</p>
+                      </div>
+                    </div>
+                    <div class="check-link">
+                      <p>Link</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a href="#" class="btn-update">Update</a>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="device-his"
+                role="tabpanel"
+                aria-labelledby="device-his-tab"
+              >
+                <div class="my-4">
+                  <h2 style="font-weight: 600">Device History</h2>
+                </div>
+                <div class="loc-card-orange">
+                  <div
+                    class="loc-card"
+                    style="margin: 20px 0 10px 0; background-color: white"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex">
+                        <img
+                          class="pe-3"
+                          src="../assets/images/mobile.png"
+                          alt=""
+                          height="100%"
+                          width="100%"
+                        />
+                        <div class="loc-card-content">
+                          <h3 style="font-size: 22px; font-weight: 600">
+                            Samsung S10+
+                          </h3>
+                          <p>December 5, 2023</p>
+                        </div>
+                      </div>
+                      <div class="check-link">
+                        <p>Log Out</p>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    style="
+                      font-size: 14px;
+                      color: white;
+                      font-weight: 600;
+                      padding: 0px 35px 8px;
+                    "
+                  >
+                    Current Session
+                  </p>
+                </div>
+                <div class="loc-card" style="margin: 20px 0 10px 0">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex">
+                      <img
+                        class="pe-3"
+                        src="../assets/images/pc.png"
+                        alt=""
+                        height="100%"
+                        width="100%"
+                      />
+                      <div class="loc-card-content">
+                        <h3 style="font-size: 22px; font-weight: 600">
+                          Windows X
+                        </h3>
+                        <p>December 1, 2023</p>
+                      </div>
+                    </div>
+                    <div class="check-link">
+                      <p>Log Out</p>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <a href="#" class="btn-update">Update</a>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="authentication"
+                role="tabpanel"
+                aria-labelledby="authentication-tab"
+              >
+                <div class="my-4">
+                  <h2 style="font-weight: 600">Two Factor Authentication</h2>
+                </div>
+                <div style="margin-bottom: 40px">
+                  <h3 style="font-weight: 600">Authenticate your account</h3>
+                  <p>
+                    Protecting your account is our top priority. We recommend
+                    turning it on for account protection from unauthorized
+                    logins. Turning it off may results in account breaching.
+                  </p>
+                </div>
+                <div
+                  class="loc-card"
+                  style="margin: 20px 0 10px 0; background-color: white"
+                >
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div class="d-flex">
+                      <div>
+                        <h3
+                          style="
+                            font-size: 22px;
+                            font-weight: 500;
+                            margin-bottom: 0px;
+                          "
+                        >
+                          Authentication
+                        </h3>
+                      </div>
+                    </div>
+                    <div class="check-link">
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="flexSwitchCheckChecked"
+                          checked
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1 mob-view-spacing">
+            <div class="loc-card mt-4 py-4">
+              <h4>Make your account more secure</h4>
+              <p>
+                We’re always working on ways to increase safety in our
+                community. That’s why we look at every account to make sure it’s
+                as secure as possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="../assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="../assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

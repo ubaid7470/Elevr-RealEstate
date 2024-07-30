@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wishlists</a>
+              </li>
+            </ul>
+            <div class="d-flex flex-row justify-content-between">
+              <a class="navbar-login-btn" type="button"> Switch to listing </a>
+
+              <div class="dropdown">
+                <a
+                  class="rounded-circle"
+                  style="border: 3px solid var(--bs-primary-color)"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <img
+                    style="height: 56px; width: 56px"
+                    src="../assets/images/user.png"
+                    alt="user profile image"
+                  />
+                </a>
+                <div
+                  class="dropdown-menu dropdown-menu-right"
+                  aria-labelledby="dropdownMenuButton"
+                  style="
+                    font-size: 16px;
+                    box-shadow: var(--bs-box-shadow-all-sides) !important;
+                  "
+                >
+                  <li class="mt-2">
+                    <a
+                      class="dropdown-item d-flex align-items-center justify-content-between"
+                      href="#"
+                    >
+                      <span
+                        ><img
+                          style="height: 56px; width: 56px"
+                          src="../assets/images/user.png"
+                          alt="user profile image" /></span
+                      ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>My Reservations</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Personal Information</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Account Settings</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Gift Cards</span></a
+                    >
+                  </li>
+                  <li class="mt-3">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span>Help Center</span></a
+                    >
+                  </li>
+                  <li class="mt-3 mb-2">
+                    <a class="dropdown-item d-flex align-items-center" href="#"
+                      ><span
+                        style="color: var(--bs-primary-color); font-weight: 600"
+                        >Log Out</span
+                      ></a
+                    >
+                  </li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="offcanvas offcanvas-start d-lg-none"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header">
+              <a class="navbar-brand" id="offcanvasNavbarLabel" href="#">
+                <img
+                  src="../assets/images/eve-logo-cropped.gif"
+                  alt="evelr logo"
+                />
+              </a>
+
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Messages</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Notifications</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Wishlist</a>
+                </li>
+                {{ This below switch to listing and user menu} will be removed
+                if user is not logged in }}
+                <div>
+                  <a
+                    style="
+                      width: 50%;
+                      padding: 8px 0;
+                      color: var(--bs-primary-color);
+                      font-weight: 600;
+                      font-size: 18px;
+                    "
+                    type="button"
+                  >
+                    Switch to listing
+                  </a>
+
+                  <div class="dropdown mt-sm-2">
+                    <a
+                      type="button"
+                      id="dropdownMenuButton"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <img
+                        class="rounded-circle"
+                        style="
+                          height: 56px;
+                          width: 56px;
+                          border: 3px solid var(--bs-primary-color);
+                        "
+                        src="../assets/images/user.png"
+                        alt="user profile image"
+                      />
+
+                      <span
+                        style="
+                          color: var(--bs-primary-color);
+                          font-weight: 600;
+                          font-size: 18px;
+                          margin-left: 5px;
+                        "
+                        >User Menu</span
+                      >
+                    </a>
+                    <div
+                      class="dropdown-menu dropdown-menu-right"
+                      aria-labelledby="dropdownMenuButton"
+                      style="font-size: 16px"
+                    >
+                      <li class="mt-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                        >
+                          <span
+                            ><img
+                              style="height: 56px; width: 56px"
+                              src="../assets/images/user.png"
+                              alt="user profile image" /></span
+                          ><span style="margin-left: 12px">Ubaid Ahmed</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>My Reservations</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Personal Information</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Account Settings</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Gift Cards</span></a
+                        >
+                      </li>
+                      <li class="mt-3">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span>Help Center</span></a
+                        >
+                      </li>
+                      <li class="mt-3 mb-2">
+                        <a
+                          class="dropdown-item d-flex align-items-center"
+                          href="#"
+                          ><span
+                            style="
+                              color: var(--bs-primary-color);
+                              font-weight: 600;
+                            "
+                            >Log Out</span
+                          ></a
+                        >
+                      </li>
+                    </div>
+                  </div>
+                </div>
+                {{ This below buttons will be removed if user is logged in }}
+                <div class="row justify-content-between mt-2">
+                  <div class="col-6">
+                    <a
+                      class="navbar-login-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#login-modal"
+                    >
+                      Log In
+                    </a>
+                  </div>
+                  <div class="col-6">
+                    <a
+                      class="navbar-signup-btn"
+                      type="button"
+                      data-bs-toggle="modal"
+                      data-bs-target="#signup-modal"
+                    >
+                      Sign Up
+                    </a>
+                  </div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Manage Payments Modal -->
+    <div
+      class="modal fade"
+      id="manage-payments-modal"
+      tabindex="-1"
+      aria-labelledby="manage-payments-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 d-flex">
+            <h3 class="modal-title fs-5" id="manage-payments-modalLabel">
+              Your Payments
+            </h3>
+          </div>
+          <div class="modal-body">
+            <p>
+              Once you have a reservation, this is where you can come to track
+              your payments and refunds.
+            </p>
+            <div class="mb-3">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-target="#"
+                data-bs-toggle="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Payment Methods Modal -->
+    <div
+      class="modal fade add-payment-methods-modal"
+      id="card-payment-methods-modal"
+      tabindex="-1"
+      aria-labelledby="card-payment-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payment-methods-modalLabel"
+            >
+              Add Payment Methods
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="paymentMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="CD">Credit/Debit Card</option>
+                  <option value="EP">Easypaisa</option>
+                  <option value="JC">JazzCash</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="number"
+                  maxlength="16"
+                  placeholder="Card Number"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3 d-flex justify-content-between">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Expiration Date"
+                    class="form-control"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    maxlength="4"
+                    placeholder="CVV"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <h3 class="modal-title fs-5" id="add-payment-methods-modalLabel">
+                Billing address
+              </h3>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  placeholder="Street Address"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  placeholder="Apt or Suite Number"
+                  class="form-control"
+                />
+              </div>
+              <div>
+                <input type="text" placeholder="City" class="form-control" />
+              </div>
+              <div class="d-flex justify-content-between">
+                <div>
+                  <input type="text" placeholder="State" class="form-control" />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    maxlength="5"
+                    placeholder="Zip Code"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div class="mb-3">
+                <select class="form-select" style="width: 100%">
+                  <option selected disabled>Country</option>
+                  <option value="AF">Afghanistan</option>
+                  <option value="AX">Aland Islands</option>
+                  <option value="AL">Albania</option>
+                  <option value="DZ">Algeria</option>
+                  <option value="AS">American Samoa</option>
+                  <option value="AD">Andorra</option>
+                  <option value="AO">Angola</option>
+                  <option value="AI">Anguilla</option>
+                  <option value="AQ">Antarctica</option>
+                  <option value="AG">Antigua and Barbuda</option>
+                  <option value="AR">Argentina</option>
+                  <option value="AM">Armenia</option>
+                  <option value="AW">Aruba</option>
+                  <option value="AU">Australia</option>
+                  <option value="AT">Austria</option>
+                  <option value="AZ">Azerbaijan</option>
+                  <option value="BS">Bahamas</option>
+                  <option value="BH">Bahrain</option>
+                  <option value="BD">Bangladesh</option>
+                  <option value="BB">Barbados</option>
+                  <option value="BY">Belarus</option>
+                  <option value="BE">Belgium</option>
+                  <option value="BZ">Belize</option>
+                  <option value="BJ">Benin</option>
+                  <option value="BM">Bermuda</option>
+                  <option value="BT">Bhutan</option>
+                  <option value="BO">Bolivia</option>
+                  <option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+                  <option value="BA">Bosnia and Herzegovina</option>
+                  <option value="BW">Botswana</option>
+                  <option value="BV">Bouvet Island</option>
+                  <option value="BR">Brazil</option>
+                  <option value="IO">British Indian Ocean Territory</option>
+                  <option value="BN">Brunei Darussalam</option>
+                  <option value="BG">Bulgaria</option>
+                  <option value="BF">Burkina Faso</option>
+                  <option value="BI">Burundi</option>
+                  <option value="KH">Cambodia</option>
+                  <option value="CM">Cameroon</option>
+                  <option value="CA">Canada</option>
+                  <option value="CV">Cape Verde</option>
+                  <option value="KY">Cayman Islands</option>
+                  <option value="CF">Central African Republic</option>
+                  <option value="TD">Chad</option>
+                  <option value="CL">Chile</option>
+                  <option value="CN">China</option>
+                  <option value="CX">Christmas Island</option>
+                  <option value="CC">Cocos (Keeling) Islands</option>
+                  <option value="CO">Colombia</option>
+                  <option value="KM">Comoros</option>
+                  <option value="CG">Congo</option>
+                  <option value="CD">
+                    Congo, Democratic Republic of the Congo
+                  </option>
+                  <option value="CK">Cook Islands</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="CI">Cote D'Ivoire</option>
+                  <option value="HR">Croatia</option>
+                  <option value="CU">Cuba</option>
+                  <option value="CW">Curacao</option>
+                  <option value="CY">Cyprus</option>
+                  <option value="CZ">Czech Republic</option>
+                  <option value="DK">Denmark</option>
+                  <option value="DJ">Djibouti</option>
+                  <option value="DM">Dominica</option>
+                  <option value="DO">Dominican Republic</option>
+                  <option value="EC">Ecuador</option>
+                  <option value="EG">Egypt</option>
+                  <option value="SV">El Salvador</option>
+                  <option value="GQ">Equatorial Guinea</option>
+                  <option value="ER">Eritrea</option>
+                  <option value="EE">Estonia</option>
+                  <option value="ET">Ethiopia</option>
+                  <option value="FK">Falkland Islands (Malvinas)</option>
+                  <option value="FO">Faroe Islands</option>
+                  <option value="FJ">Fiji</option>
+                  <option value="FI">Finland</option>
+                  <option value="FR">France</option>
+                  <option value="GF">French Guiana</option>
+                  <option value="PF">French Polynesia</option>
+                  <option value="TF">French Southern Territories</option>
+                  <option value="GA">Gabon</option>
+                  <option value="GM">Gambia</option>
+                  <option value="GE">Georgia</option>
+                  <option value="DE">Germany</option>
+                  <option value="GH">Ghana</option>
+                  <option value="GI">Gibraltar</option>
+                  <option value="GR">Greece</option>
+                  <option value="GL">Greenland</option>
+                  <option value="GD">Grenada</option>
+                  <option value="GP">Guadeloupe</option>
+                  <option value="GU">Guam</option>
+                  <option value="GT">Guatemala</option>
+                  <option value="GG">Guernsey</option>
+                  <option value="GN">Guinea</option>
+                  <option value="GW">Guinea-Bissau</option>
+                  <option value="GY">Guyana</option>
+                  <option value="HT">Haiti</option>
+                  <option value="HM">Heard Island and Mcdonald Islands</option>
+                  <option value="VA">Holy See (Vatican City State)</option>
+                  <option value="HN">Honduras</option>
+                  <option value="HK">Hong Kong</option>
+                  <option value="HU">Hungary</option>
+                  <option value="IS">Iceland</option>
+                  <option value="IN">India</option>
+                  <option value="ID">Indonesia</option>
+                  <option value="IR">Iran, Islamic Republic of</option>
+                  <option value="IQ">Iraq</option>
+                  <option value="IE">Ireland</option>
+                  <option value="IM">Isle of Man</option>
+                  <option value="IL">Israel</option>
+                  <option value="IT">Italy</option>
+                  <option value="JM">Jamaica</option>
+                  <option value="JP">Japan</option>
+                  <option value="JE">Jersey</option>
+                  <option value="JO">Jordan</option>
+                  <option value="KZ">Kazakhstan</option>
+                  <option value="KE">Kenya</option>
+                  <option value="KI">Kiribati</option>
+                  <option value="KP">
+                    Korea, Democratic People's Republic of
+                  </option>
+                  <option value="KR">Korea, Republic of</option>
+                  <option value="XK">Kosovo</option>
+                  <option value="KW">Kuwait</option>
+                  <option value="KG">Kyrgyzstan</option>
+                  <option value="LA">Lao People's Democratic Republic</option>
+                  <option value="LV">Latvia</option>
+                  <option value="LB">Lebanon</option>
+                  <option value="LS">Lesotho</option>
+                  <option value="LR">Liberia</option>
+                  <option value="LY">Libyan Arab Jamahiriya</option>
+                  <option value="LI">Liechtenstein</option>
+                  <option value="LT">Lithuania</option>
+                  <option value="LU">Luxembourg</option>
+                  <option value="MO">Macao</option>
+                  <option value="MK">
+                    Macedonia, the Former Yugoslav Republic of
+                  </option>
+                  <option value="MG">Madagascar</option>
+                  <option value="MW">Malawi</option>
+                  <option value="MY">Malaysia</option>
+                  <option value="MV">Maldives</option>
+                  <option value="ML">Mali</option>
+                  <option value="MT">Malta</option>
+                  <option value="MH">Marshall Islands</option>
+                  <option value="MQ">Martinique</option>
+                  <option value="MR">Mauritania</option>
+                  <option value="MU">Mauritius</option>
+                  <option value="YT">Mayotte</option>
+                  <option value="MX">Mexico</option>
+                  <option value="FM">Micronesia, Federated States of</option>
+                  <option value="MD">Moldova, Republic of</option>
+                  <option value="MC">Monaco</option>
+                  <option value="MN">Mongolia</option>
+                  <option value="ME">Montenegro</option>
+                  <option value="MS">Montserrat</option>
+                  <option value="MA">Morocco</option>
+                  <option value="MZ">Mozambique</option>
+                  <option value="MM">Myanmar</option>
+                  <option value="NA">Namibia</option>
+                  <option value="NR">Nauru</option>
+                  <option value="NP">Nepal</option>
+                  <option value="NL">Netherlands</option>
+                  <option value="AN">Netherlands Antilles</option>
+                  <option value="NC">New Caledonia</option>
+                  <option value="NZ">New Zealand</option>
+                  <option value="NI">Nicaragua</option>
+                  <option value="NE">Niger</option>
+                  <option value="NG">Nigeria</option>
+                  <option value="NU">Niue</option>
+                  <option value="NF">Norfolk Island</option>
+                  <option value="MP">Northern Mariana Islands</option>
+                  <option value="NO">Norway</option>
+                  <option value="OM">Oman</option>
+                  <option value="PK">Pakistan</option>
+                  <option value="PW">Palau</option>
+                  <option value="PS">Palestinian Territory, Occupied</option>
+                  <option value="PA">Panama</option>
+                  <option value="PG">Papua New Guinea</option>
+                  <option value="PY">Paraguay</option>
+                  <option value="PE">Peru</option>
+                  <option value="PH">Philippines</option>
+                  <option value="PN">Pitcairn</option>
+                  <option value="PL">Poland</option>
+                  <option value="PT">Portugal</option>
+                  <option value="PR">Puerto Rico</option>
+                  <option value="QA">Qatar</option>
+                  <option value="RE">Reunion</option>
+                  <option value="RO">Romania</option>
+                  <option value="RU">Russian Federation</option>
+                  <option value="RW">Rwanda</option>
+                  <option value="BL">Saint Barthelemy</option>
+                  <option value="SH">Saint Helena</option>
+                  <option value="KN">Saint Kitts and Nevis</option>
+                  <option value="LC">Saint Lucia</option>
+                  <option value="MF">Saint Martin</option>
+                  <option value="PM">Saint Pierre and Miquelon</option>
+                  <option value="VC">Saint Vincent and the Grenadines</option>
+                  <option value="WS">Samoa</option>
+                  <option value="SM">San Marino</option>
+                  <option value="ST">Sao Tome and Principe</option>
+                  <option value="SA">Saudi Arabia</option>
+                  <option value="SN">Senegal</option>
+                  <option value="RS">Serbia</option>
+                  <option value="CS">Serbia and Montenegro</option>
+                  <option value="SC">Seychelles</option>
+                  <option value="SL">Sierra Leone</option>
+                  <option value="SG">Singapore</option>
+                  <option value="SX">Sint Maarten</option>
+                  <option value="SK">Slovakia</option>
+                  <option value="SI">Slovenia</option>
+                  <option value="SB">Solomon Islands</option>
+                  <option value="SO">Somalia</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="GS">
+                    South Georgia and the South Sandwich Islands
+                  </option>
+                  <option value="SS">South Sudan</option>
+                  <option value="ES">Spain</option>
+                  <option value="LK">Sri Lanka</option>
+                  <option value="SD">Sudan</option>
+                  <option value="SR">Suriname</option>
+                  <option value="SJ">Svalbard and Jan Mayen</option>
+                  <option value="SZ">Swaziland</option>
+                  <option value="SE">Sweden</option>
+                  <option value="CH">Switzerland</option>
+                  <option value="SY">Syrian Arab Republic</option>
+                  <option value="TW">Taiwan, Province of China</option>
+                  <option value="TJ">Tajikistan</option>
+                  <option value="TZ">Tanzania, United Republic of</option>
+                  <option value="TH">Thailand</option>
+                  <option value="TL">Timor-Leste</option>
+                  <option value="TG">Togo</option>
+                  <option value="TK">Tokelau</option>
+                  <option value="TO">Tonga</option>
+                  <option value="TT">Trinidad and Tobago</option>
+                  <option value="TN">Tunisia</option>
+                  <option value="TR">Turkey</option>
+                  <option value="TM">Turkmenistan</option>
+                  <option value="TC">Turks and Caicos Islands</option>
+                  <option value="TV">Tuvalu</option>
+                  <option value="UG">Uganda</option>
+                  <option value="UA">Ukraine</option>
+                  <option value="AE">United Arab Emirates</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="US">United States</option>
+                  <option value="UM">
+                    United States Minor Outlying Islands
+                  </option>
+                  <option value="UY">Uruguay</option>
+                  <option value="UZ">Uzbekistan</option>
+                  <option value="VU">Vanuatu</option>
+                  <option value="VE">Venezuela</option>
+                  <option value="VN">Viet Nam</option>
+                  <option value="VG">Virgin Islands, British</option>
+                  <option value="VI">Virgin Islands, U.s.</option>
+                  <option value="WF">Wallis and Futuna</option>
+                  <option value="EH">Western Sahara</option>
+                  <option value="YE">Yemen</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="ZW">Zimbabwe</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Easypaisa Payment Methods Modal -->
+    <div
+      class="modal fade add-payment-methods-modal"
+      id="easypaisa-payment-methods-modal"
+      tabindex="-1"
+      aria-labelledby="easypaisa-payment-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payment-methods-modalLabel"
+            >
+              Add Payment Methods
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="paymentMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="CD">Credit/Debit Card</option>
+                  <option value="EP">Easypaisa</option>
+                  <option value="JC">JazzCash</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Account Number"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jasscash Payment Methods Modal -->
+    <div
+      class="modal fade add-payment-methods-modal"
+      id="jasscash-payment-methods-modal"
+      tabindex="-1"
+      aria-labelledby="jasscash-payment-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payment-methods-modalLabel"
+            >
+              Add Payment Methods
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="paymentMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="CD">Credit/Debit Card</option>
+                  <option value="EP">Easypaisa</option>
+                  <option value="JC">JazzCash</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Account Number"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payoneer Payment Methods Modal -->
+    <div
+      class="modal fade add-payment-methods-modal"
+      id="payoneer-payment-methods-modal"
+      tabindex="-1"
+      aria-labelledby="payoneer-payment-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payment-methods-modalLabel"
+            >
+              Add Payment Methods
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="paymentMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="CD">Credit/Debit Card</option>
+                  <option value="EP">Easypaisa</option>
+                  <option value="JC">JazzCash</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Account Email"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn-save">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Payout Methods Modal -->
+    <div
+      class="modal fade add-payout-methods-modal"
+      id="add-payout-methods-modal"
+      tabindex="-1"
+      aria-labelledby="add-payout-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payout-methods-modalLabel"
+            >
+              Let’s add a payout method
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="payoutMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="BT">Bank Transfer</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <ul>
+                <li>Prepaid Debit Mastercard</li>
+                <li>2-3 Business days</li>
+                <li>No fees</li>
+              </ul>
+              <div class="mb-3">
+                <select class="form-select" style="width: 100%">
+                  <option selected disabled>Bank Name</option>
+                </select>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Account Number"
+                    class="form-control"
+                  />
+                </div>
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Account Holder Name"
+                  class="form-control"
+                />
+              </div>
+              <p>
+                Enter the account holder’s name exactly as it appears on the
+                bank statements.
+              </p>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  placeholder="Address Line 1"
+                  class="form-control"
+                />
+              </div>
+              <div>
+                <input
+                  type="text"
+                  placeholder="Address Line 2 (if applicable)"
+                  class="form-control"
+                />
+              </div>
+              <div>
+                <input
+                  type="tel"
+                  placeholder="Contact Number"
+                  class="form-control"
+                />
+              </div>
+              <p>
+                Enter the account holder’s contact number that receives sms
+                alert and notifications.
+              </p>
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Payout Methods Modal -->
+    <div
+      class="modal fade add-payout-methods-modal"
+      id="payoneer-payout-methods-modal"
+      tabindex="-1"
+      aria-labelledby="payoneer-payout-methods-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3
+              class="modal-title fs-5 mb-3"
+              id="add-payout-methods-modalLabel"
+            >
+              Let’s add a payout method
+            </h3>
+            <form action="#">
+              <div class="mb-3">
+                <select
+                  class="form-select"
+                  id="payoutMethod"
+                  style="width: 100%"
+                >
+                  <option selected value="BT">Bank Transfer</option>
+                  <option value="PY">Payoneer</option>
+                </select>
+              </div>
+              <ul>
+                <li>Prepaid Debit Mastercard</li>
+                <li>2-3 Business days</li>
+                <li>No fees</li>
+              </ul>
+              <div>
+                <input
+                  type="email"
+                  placeholder="Account Email"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  breadcrumb Section  -->
+    <section class="custom-breadcrumb">
+      <div class="container">
+        <div class="new-listing-heading">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Account</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Payments & Payouts
+              </li>
+            </ol>
+          </nav>
+          <h1 class="primary-hd">Payments & Payouts</h1>
+        </div>
+      </div>
+    </section>
+
+    <!--  tabbing Section  -->
+    <section class="payments-and-payouts login-security">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <ul
+              class="nav nav-tabs mb-3 justify-content-center"
+              id="myTab"
+              role="tablist"
+            >
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="payment-methods-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#payment-methods"
+                  type="button"
+                  role="tab"
+                  aria-controls="payment-methods"
+                  aria-selected="true"
+                >
+                  Payment Methods
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="payout-methods-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#payout-methods"
+                  type="button"
+                  role="tab"
+                  aria-controls="payout-methods"
+                  aria-selected="false"
+                >
+                  Payout Methods
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="guest-contributions-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#guest-contributions"
+                  type="button"
+                  role="tab"
+                  aria-controls="guest-contributions"
+                  aria-selected="false"
+                >
+                  Guest Contributions
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="reward-for-host-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#reward-for-host"
+                  type="button"
+                  role="tab"
+                  aria-controls="reward-for-host"
+                  aria-selected="false"
+                >
+                  Reward for Host
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="tab-content" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="payment-methods"
+                role="tabpanel"
+                aria-labelledby="payment-methods-tab"
+              >
+                <div class="mb-5">
+                  <div class="my-4">
+                    <h2 style="font-weight: 600">Your Payments</h2>
+                    <h5>Keep track of all your payments and refunds.</h5>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="btn-update btn-update-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#manage-payments-modal"
+                      >&nbsp&nbsp&nbsp Manage Payments &nbsp&nbsp&nbsp</a
+                    >
+                  </div>
+                </div>
+                <div>
+                  <div class="my-4">
+                    <h2 style="font-weight: 600">Payment Methods</h2>
+                    <h5>
+                      Add a payment method using our secure payment system, then
+                      start planning your next trip.
+                    </h5>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="btn-update btn-update-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#card-payment-methods-modal"
+                      >Add Payment Methods</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="payout-methods"
+                role="tabpanel"
+                aria-labelledby="payout-methods-tab"
+              >
+                <div class="mb-5">
+                  <div class="my-4">
+                    <h2 style="font-weight: 600">How you’ll get paid</h2>
+                    <h5>
+                      Add at least one payout method so we know where to send
+                      your money.
+                    </h5>
+                  </div>
+                  <div>
+                    <a
+                      href="#"
+                      class="btn-update btn-update-2"
+                      data-bs-toggle="modal"
+                      data-bs-target="#add-payout-methods-modal"
+                      >Set up Payout methods</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="guest-contributions"
+                role="tabpanel"
+                aria-labelledby="guest-contributions-tab"
+              >
+                <div class="mb-5">
+                  <div class="my-4">
+                    <h2 style="font-weight: 600">How you’ll get paid</h2>
+                    <h5>
+                      Add at least one payout method so we know where to send
+                      your money.
+                    </h5>
+                  </div>
+                  <div
+                    class="loc-card"
+                    style="margin: 20px 0 10px 0; background-color: white"
+                  >
+                    <div
+                      class="d-flex justify-content-between align-items-center"
+                    >
+                      <div class="d-flex">
+                        <div>
+                          <h3
+                            style="
+                              font-size: 22px;
+                              font-weight: 500;
+                              margin-bottom: 0px;
+                            "
+                          >
+                            Allow contributions
+                          </h3>
+                        </div>
+                      </div>
+                      <div class="check-link">
+                        <div class="form-check form-switch">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            role="switch"
+                            id="flexSwitchCheckChecked"
+                            checked
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <p
+                    style="font-size: 12px; color: #474747; font-weight: 500"
+                    href="#"
+                  >
+                    100% of all contributions will be deposited into your payout
+                    account unless you have a pending balance. You payout is
+                    subjected to the
+                    <a
+                      style="
+                        color: #262626;
+                        text-decoration: underline !important;
+                        font-weight: 600;
+                      "
+                      href=""
+                      >Payment Term of Services.</a
+                    >
+                  </p>
+                </div>
+              </div>
+              <div
+                class="tab-pane fade"
+                id="reward-for-host"
+                role="tabpanel"
+                aria-labelledby="reward-for-host-tab"
+              >
+                <div class="my-4">
+                  <h2 style="font-weight: 600">Reward for Host</h2>
+                  <h5>
+                    20% on fees reward to host who have tourism and hospitality
+                    diploma/degree.
+                  </h5>
+                </div>
+                <div class="documents-box mb-3">
+                  <p>Add documents</p>
+                  <a href="#">Upload</a>
+                </div>
+                <p
+                  style="font-size: 14px; color: #474747; font-weight: 500"
+                  href="#"
+                >
+                  Upload your diploma/degree documents to get eligible for
+                  Reward for Host feature.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 offset-lg-1 mob-view-spacing">
+            <div class="loc-card mt-4 py-4 need-help">
+              <h4>Need Help?</h4>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      When you will get your payout
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingOne"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      How Payout works?
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingTwo"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      Go to your Transaction History
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    aria-labelledby="flush-headingThree"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                      sed do eiusmod tempor incididunt ut labore et dolore magna
+                      aliqua.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="../assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="../assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

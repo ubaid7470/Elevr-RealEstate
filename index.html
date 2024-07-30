@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/global.css" />
+    <link rel="stylesheet" href="./assets/vendor/bootstrap/bootstrap.min.css" />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Login Modal -->
+    <div
+      class="modal fade"
+      id="login-modal"
+      tabindex="-1"
+      aria-labelledby="login-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 d-flex justify-content-center">
+            <h3 class="modal-title fs-5" id="login-modalLabel">Welcome Back</h3>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="Email"
+                  placeholder="Email/Phone Number"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="Password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="mb-4">
+                <a class="forget-pass" href="#">Forget Password?</a>
+              </div>
+              <div class="mb-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-target="#login-2step-verification-modal"
+                  data-bs-toggle="modal"
+                >
+                  Log In
+                </button>
+              </div>
+              <div class="d-flex justify-content-center text-center">
+                <span class="create-account"
+                  >Don’t Have an Account? <a href="">Create Now</a></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login 2-step verification modal-->
+    <div
+      class="modal fade"
+      id="login-2step-verification-modal"
+      tabindex="-1"
+      aria-labelledby="login-2step-verification-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 d-flex justify-content-center">
+            <h3
+              class="modal-title fs-5"
+              id="login-2step-verification-modalLabel"
+            >
+              2-Step Authentication
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center text-center mb-3">
+              <span class="privacy-policy"
+                >Enter the code sent to mobile number 0312****105</span
+              >
+            </div>
+
+            <form>
+              <div id="login-otp-inputs" class="otp-field mb-4">
+                <input type="number" placeholder="-" />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+              </div>
+
+              <div class="mb-3">
+                <button type="button" id="login-otp" class="btn btn-primary">
+                  Log In
+                </button>
+              </div>
+              <div class="d-flex justify-content-center text-center mb-3">
+                <span class="privacy-policy">
+                  Didn’t receive code?
+                  <a href="">Resent</a></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div
+      class="modal fade"
+      id="signup-modal"
+      tabindex="-1"
+      aria-labelledby="signup-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 d-flex justify-content-center">
+            <h3 class="modal-title fs-5" id="signup-modalLabel">
+              Welcome to Evelr
+            </h3>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="FullName"
+                  placeholder="Full Name"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="GovernmentID"
+                  placeholder="Government ID Card"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="Email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="PhoneNumber"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="mb-3">
+                <div class="col-12 mt-4">
+                  <div class="select-wrapper">
+                    <select id="countrySelect" class="form-select select-input">
+                      <option selected disabled>Currency</option>
+                      <option value="$">Dollar ($)</option>
+                      <option value="Pkr">Pakistani Rupee</option>
+                      <option value="Inr">Indian Rupee</option>
+                    </select>
+                    <span class="custom-arrow"></span>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                  <label class="currency-text"
+                    >Auto-Select according to your country</label
+                  >
+                  <div class="form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      role="switch"
+                      id="flexSwitchCheckChecked"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="Password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="ReEnterPassword"
+                  placeholder="Re-Enter Password"
+                />
+              </div>
+              <div class="mb-4">
+                <div class="d-flex flex-row">
+                  <button
+                    type="submit"
+                    class="btns-signup host-btn active"
+                    onclick="toggleButtons(this)"
+                  >
+                    Be a Host
+                  </button>
+                  <button
+                    type="submit"
+                    class="btns-signup guest-btn"
+                    onclick="toggleButtons(this)"
+                  >
+                    Be a Guest
+                  </button>
+                </div>
+              </div>
+              <div class="mb-3">
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  data-bs-target="#signup-number-verification-modal"
+                  data-bs-toggle="modal"
+                >
+                  Sign Up
+                </button>
+              </div>
+              <div class="d-flex justify-content-center text-center mb-2">
+                <span class="privacy-policy">
+                  By continuing I accept the
+                  <a href="">Terms & Conditions</a><br />
+                  and <a href="">Privacy Policy</a></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNUP Number verification modal-->
+    <div
+      class="modal fade"
+      id="signup-number-verification-modal"
+      tabindex="-1"
+      aria-labelledby="signup-number-verification-modalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header border-0 d-flex justify-content-center">
+            <h3
+              class="modal-title fs-5"
+              id="signup-number-verification-modalLabel"
+            >
+              Verify Your Number
+            </h3>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center text-center mb-3">
+              <span class="privacy-policy"
+                >Enter the code sent to mobile number 0312****105</span
+              >
+            </div>
+
+            <form>
+              <div id="signup-otp-inputs" class="otp-field mb-4">
+                <input type="number" placeholder="-" />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+                <input type="number" placeholder="-" disabled />
+              </div>
+
+              <div class="mb-3">
+                <button type="button" id="signup-otp" class="btn btn-primary">
+                  Sign Up
+                </button>
+              </div>
+              <div class="d-flex justify-content-center text-center mb-3">
+                <span class="privacy-policy">
+                  Didn’t receive code?
+                  <a href="">Resent</a></span
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <nav class="navbar navbar-expand-lg bg-light py-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./notifications/notification.html"
+                >Notifications</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Wishlists</a>
+            </li>
+          </ul>
+          <div class="nav-btns">
+            <!-- <a
+              class="navbar-login-btn"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#login-modal"
+            >
+              Log In
+            </a>
+            <a
+              class="navbar-signup-btn"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#signup-modal"
+            >
+              Sign Up
+            </a> -->
+            <a
+              class="navbar-login-btn"
+              href="./new-listing/place-category.html"
+              type="button"
+            >
+              Switch to listing
+            </a>
+            <a href="./profile/user-profile.html">
+              <img
+                style="height: 56px; width: 56px"
+                src="./assets/images/user.png"
+                alt="user profile image"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="offcanvas offcanvas-start d-lg-none"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <div class="offcanvas-header">
+            <a class="navbar-brand" id="offcanvasNavbarLabel" href="#">
+              <img
+                src="./assets/images/eve-logo-cropped.gif"
+                alt="evelr logo"
+              />
+            </a>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Messages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Notifications</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Wishlist</a>
+              </li>
+              <div class="row justify-content-between mt-2">
+                <div class="col-6">
+                  <a
+                    class="navbar-login-btn"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#login-modal"
+                  >
+                    Log In
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a
+                    class="navbar-signup-btn"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signup-modal"
+                  >
+                    Sign Up
+                  </a>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-3">
+      <div class="container">
+        <div
+          style="
+            background-image: url('./assets/images/cover.png');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            border-radius: 25px;
+          "
+        >
+          <div class="hero col-12">
+            <div class="col-lg-7">
+              <h1>Find your dream<br /><span>Accommodation</span></h1>
+              <p>
+                Discover your perfect space—a place that feels <br />just right,
+                tailored to your every need and desire.
+              </p>
+              <div class="container position-relative p-0">
+                <button class="search-btn" type="button">Search</button>
+                <div class="hero-search">
+                  <div class="row">
+                    <div class="col-lg-3 p-1 m-0">
+                      <label for="Where" class="form-label">Where</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Where"
+                        placeholder="Search"
+                        onfocus="showSearchCard()"
+                        onblur="hideSearchCard()"
+                      />
+                    </div>
+
+                    <div class="col-lg-3 p-1 m-0">
+                      <label for="Check-in" class="form-label">Check-in</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Check-in"
+                        placeholder="Add Dates"
+                      />
+                    </div>
+                    <div class="col-lg-3 p-1 m-0">
+                      <label for="Check-out" class="form-label"
+                        >Check-out</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Check-out"
+                        placeholder="Add Dates"
+                      />
+                    </div>
+                    <div class="col-lg-3 p-1 m-0">
+                      <label for="Guests" class="form-label">Guests</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="Guests"
+                        placeholder="Add Guests"
+                        onfocus="showGuestCard()"
+                        onblur="hideGuestCard()"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Guest Card Pop-Up  -->
+                <div
+                  id="hero-guest-card"
+                  class="col-12 col-lg-10 col-xl-9 col-xxl-8 position-absolute"
+                >
+                  <div class="card-wrapper text-black">
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col-6">
+                        <h6 class="list-title">Adults</h6>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <div class="counter">
+                          <div
+                            class="counter-btn"
+                            onclick="decrement('adultsCount')"
+                          >
+                            <img src="../assets/images/minus.png" alt="" />
+                          </div>
+                          <input
+                            type="number"
+                            class="counter-input text-center"
+                            style="
+                              border-radius: 0 !important;
+                              padding: 5px 12px !important;
+                            "
+                            id="adultsCount"
+                            value="0"
+                            readonly
+                          />
+                          <div
+                            class="counter-btn"
+                            onclick="increment('adultsCount')"
+                          >
+                            <img src="../assets/images/plus.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col">
+                        <h6 class="list-title">Teenagers</h6>
+                      </div>
+                      <div class="col d-flex justify-content-end">
+                        <div class="counter">
+                          <div
+                            class="counter-btn"
+                            onclick="decrement('teenagersCount')"
+                          >
+                            <img src="../assets/images/minus.png" alt="" />
+                          </div>
+                          <input
+                            type="number"
+                            class="counter-input"
+                            style="
+                              border-radius: 0 !important;
+                              padding: 5px 12px !important;
+                            "
+                            id="teenagersCount"
+                            value="0"
+                            readonly
+                          />
+                          <div
+                            class="counter-btn"
+                            onclick="increment('teenagersCount')"
+                          >
+                            <img src="../assets/images/plus.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col">
+                        <h6 class="list-title">Kids</h6>
+                      </div>
+                      <div class="col d-flex justify-content-end">
+                        <div class="counter">
+                          <div
+                            class="counter-btn"
+                            onclick="decrement('kidsCount')"
+                          >
+                            <img src="../assets/images/minus.png" alt="" />
+                          </div>
+                          <input
+                            type="number"
+                            class="counter-input"
+                            style="
+                              border-radius: 0 !important;
+                              padding: 5px 12px !important;
+                            "
+                            id="kidsCount"
+                            value="0"
+                            readonly
+                          />
+                          <div
+                            class="counter-btn"
+                            onclick="increment('kidsCount')"
+                          >
+                            <img src="../assets/images/plus.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row justify-content-between align-items-center">
+                      <div class="col">
+                        <h6 class="list-title">Pets</h6>
+                      </div>
+                      <div class="col d-flex justify-content-end">
+                        <div class="counter">
+                          <div
+                            class="counter-btn"
+                            onclick="decrement('petsCount')"
+                          >
+                            <img src="../assets/images/minus.png" alt="" />
+                          </div>
+                          <input
+                            type="number"
+                            class="counter-input"
+                            style="
+                              border-radius: 0 !important;
+                              padding: 5px 12px !important;
+                            "
+                            id="petsCount"
+                            value="0"
+                            readonly
+                          />
+                          <div
+                            class="counter-btn"
+                            onclick="increment('petsCount')"
+                          >
+                            <img src="../assets/images/plus.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Search Card Pop-Up  -->
+                <div
+                  id="hero-search-card"
+                  class="col-12 col-sm-9 col-md-6 col-lg-10 col-xl-9 col-xxl-8 position-absolute"
+                >
+                  <div class="search-card">
+                    <div class="row">
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                      <div
+                        class="col-6 col-lg-4"
+                        style="padding: 0 6px !important"
+                      >
+                        <img src="./assets/images/temp-map.jpeg" alt="" />
+                        <div>
+                          <label>I am Flexible</label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Tabs Section -->
+    <section class="py-3">
+      <div class="container">
+        <div class="nav-scroller">
+          <button
+            type="button"
+            class="nav-scroller-btn nav-scroller-btn--left"
+            aria-label="Scroll left"
+          >
+            <svg
+              class="nav-scroller-icon"
+              height="512"
+              viewBox="0 0 32 32"
+              width="512"
+              xmlns="http://www.w3.org/2000/svg"
+              id="fi_2735069"
+            >
+              <g id="Layer_19" data-name="Layer 19">
+                <path
+                  d="m23.21 28.29a1 1 0 0 1 0 1.42 1 1 0 0 1 -1.42 0l-13-13a1 1 0 0 1 0-1.42l13-13a1 1 0 1 1 1.42 1.42l-12.3 12.29z"
+                ></path>
+              </g>
+            </svg>
+          </button>
+          <nav class="nav-scroller-nav">
+            <div class="nav-scroller-content">
+              <a href="#" class="nav-scroller-item nav__link active-tab">
+                <img src="./assets/images/near-me.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Trending</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/near-me.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Trending</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/near-me.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Trending</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/near-me.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Trending</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/near-me.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Trending</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Near Me</div>
+                </div>
+              </a>
+
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/cottage.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Cottage</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Apartment</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Shop</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/cottage.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Cottage</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Apartment</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Shop</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/cottage.svg" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Cottage</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Apartment</div>
+                </div>
+              </a>
+              <a href="#" class="nav-scroller-item nav__link">
+                <img src="./assets/images/appartment.png" alt="" />
+                <div class="nav__link__content">
+                  <div class="nav__link__title">Shop</div>
+                </div>
+              </a>
+            </div>
+          </nav>
+          <button
+            type="button"
+            class="nav-scroller-btn nav-scroller-btn--right"
+            aria-label="Scroll right"
+          >
+            <svg
+              class="nav-scroller-icon"
+              height="512"
+              viewBox="0 0 32 32"
+              width="512"
+              xmlns="http://www.w3.org/2000/svg"
+              id="fi_2735071"
+            >
+              <g id="Layer_20" data-name="Layer 20">
+                <path
+                  d="m23.21 16.71-13 13a1 1 0 0 1 -1.42 0 1 1 0 0 1 0-1.42l12.3-12.29-12.3-12.29a1 1 0 0 1 1.42-1.42l13 13a1 1 0 0 1 0 1.42z"
+                ></path>
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Near Me Map and Filter -->
+    <!-- <section class="py-3">
+       <div class="container">
+         <div class="row">
+           <div class="col-11" style="background-color: blueviolet">
+             <input class="search-location-input form-control" type="text" />
+           </div>
+           <div class="col-1" style="background-color: aqua">
+             <button class="search-location-filter">
+               <img
+                 class="search-location-filter-img"
+                 src="./assets/images/filter-icon.png"
+                 height="30"
+                 width="30"
+               />
+             </button>
+           </div>
+         </div>
+       </div>
+     </section> -->
+
+    <!-- Cards Listing Section -->
+    <section class="listings py-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card">
+              <a href="./book-apartment/apartment-details.html">
+                <div style="height: 100%; overflow: hidden">
+                  <img
+                    src="./assets/images/listing.jpg"
+                    class="card-img-top"
+                    alt="..."
+                  />
+                </div>
+                <div
+                  class="favorite-wrapper active-favorite"
+                  onclick="toggleActiveFavorite(this)"
+                >
+                  <img
+                    class="favorite-icon"
+                    src="./assets/images/favorite-icon.png"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body position-relative">
+                  <div class="col-12">
+                    <div class="row">
+                      <div class="col-10">
+                        <p class="price card-text">Rs 5k per night</p>
+                        <h5 class="title card-title">Salam Towers Apartment</h5>
+                        <p class="location card-text">
+                          Jamia Millia, Malir, Karachi
+                        </p>
+                      </div>
+                      <div class="col-2">
+                        <div class="rate-wrapper">
+                          <img
+                            class="rate-icon"
+                            style="
+                              filter: brightness(0) saturate(100%) invert(59%)
+                                sepia(100%) saturate(435%) hue-rotate(0deg)
+                                brightness(103%) contrast(106%);
+                            "
+                            src="../assets/icons/star-fill.svg"
+                          />
+                          <span>1k+</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Add additional col elements for more cards as needed -->
+        </div>
+      </div>
+      <div class="listing-btns">
+        <button>Load More</button>
+        <button>View Map</button>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="./assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="./assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./assets/js/custom.js"></script>
+    <script src="./assets/js/custom-select.js"></script>
+    <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

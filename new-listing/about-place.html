@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elevr - New Listing</title>
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- About Your Place Section  -->
+    <section class="about-place-sec">
+      <div class="container">
+        <h1 class="new-listing-heading primary-hd">About your place</h1>
+        <form action="#">
+          <div class="row">
+            <div class="col-lg-6 pe-lg-5">
+              <h2 class="sub-hd">Guests</h2>
+              <div class="listing-card-wrapper">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col-6">
+                    <h6 class="list-title">Adults</h6>
+                  </div>
+                  <div class="col-6 d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('adultsCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input text-center"
+                        id="adultsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('adultsCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Teenagers</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('teenagersCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="teenagersCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('teenagersCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Kids</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div class="counter-btn" onclick="decrement('kidsCount')">
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="kidsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div class="counter-btn" onclick="increment('kidsCount')">
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Pets</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div class="counter-btn" onclick="decrement('petsCount')">
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="petsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div class="counter-btn" onclick="increment('petsCount')">
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="sub-hd">Rooms</h2>
+              <div class="listing-card-wrapper">
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Bedrooms</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('bedroomsCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="bedroomsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('bedroomsCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Bathrooms</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('bathroomsCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="bathroomsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('bathroomsCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Dining Room</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('diningroomsCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="diningroomsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('diningroomsCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row justify-content-between align-items-center">
+                  <div class="col">
+                    <h6 class="list-title">Living Room</h6>
+                  </div>
+                  <div class="col d-flex justify-content-end">
+                    <div class="counter">
+                      <div
+                        class="counter-btn"
+                        onclick="decrement('livingroomsCount')"
+                      >
+                        <img src="../assets/images/minus.png" alt="" />
+                      </div>
+                      <input
+                        type="number"
+                        class="counter-input"
+                        id="livingroomsCount"
+                        value="0"
+                        readonly
+                      />
+                      <div
+                        class="counter-btn"
+                        onclick="increment('livingroomsCount')"
+                      >
+                        <img src="../assets/images/plus.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 ps-lg-5 mob-view-spacing">
+              <h2 class="sub-hd">What your place offers</h2>
+              <div class="row justify-content-center">
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      TV
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Air Conditioning
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Beach Access
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Smoke Alarm
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Carbon Alarm
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Wifi
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      TV
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Air Conditioning
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      TV
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Air Conditioning
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Beach Access
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Beach Access
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Smoke Alarm
+                    </div>
+                  </a>
+                </div>
+                <div class="col-6 col-lg-4 ps-0">
+                  <a>
+                    <div
+                      class="place-offer-btn"
+                      onclick="offerButtonActive(this)"
+                    >
+                      Carbon Alarm
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Save/Exit and Continue Buttons -->
+    <section class="save-cont-btns-sec">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div
+            class="col-sm-6 col-md-5 col-lg-4 col-xl-3 d-flex justify-content-start"
+          >
+            <a href="" class="save-exit-btn">Save & Exit</a>
+          </div>
+          <div
+            class="col-sm-6 col-md-5 col-lg-4 col-xl-3 d-flex justify-content-end"
+          >
+            <a href="./place-photos.html" class="continue-btn">Continue</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  -->
+    <footer>
+      <div class="container">
+        <hr />
+        <div class="footer-end">
+          <div
+            class="row align-items-center justify-content-center justify-content-md-between"
+          >
+            <div class="col-md-6 p-2 m-0">
+              <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+            </div>
+            <div class="col-md-6 p-2 m-0 text-md-end">
+              <a href="">Terms & Condition</a>
+              <a class="m-lg-3" href="">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+  </body>
+</html>

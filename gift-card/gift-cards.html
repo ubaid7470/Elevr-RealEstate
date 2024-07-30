@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <title>Elevr - Personal Information</title>
+  </head>
+  <body>
+    <!-- Verify/Add CNIC Model  -->
+    <div
+      class="modal fade"
+      id="addCNICModal"
+      tabindex="-1"
+      aria-labelledby="addCNICLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">Let’s add your CNIC</h3>
+          <p class="modal-text">
+            We’ll need you to add an official government ID. This step helps
+            make sure you’re really you.
+          </p>
+          <div class="modal-body">
+            <div>
+              <a href="">Upload Front</a>
+            </div>
+            <div>
+              <a href="">Upload Back</a>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#cnicUploadedModal"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CNIC Uploaded Model  -->
+    <div
+      class="modal fade"
+      id="cnicUploadedModal"
+      tabindex="-1"
+      aria-labelledby="cnicUploadedModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">CNIC Verification</h3>
+
+          <div class="modal-body text-center">
+            <img
+              src="../assets/images/round-check.png"
+              height="100"
+              width="100"
+              alt=""
+            />
+            <h3 style="font-size: 25px; font-weight: 600; margin-top: 25px">
+              Upload Successful
+            </h3>
+            <p class="modal-text" style="margin-top: 12px">
+              We’ll need you to add an official government ID. This step helps
+              make sure you’re really you.
+            </p>
+          </div>
+          <button type="button" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- Gift Cards Section -->
+    <section>
+      <div class="container">
+        <h1 class="new-listing-heading primary-hd">Gift Cards</h1>
+        <div class="row">
+          <div class="col-lg-7">
+            <p style="font-size: 18px">
+              Looks like gift cards aren't available right now, but we’re
+              working on it!
+            </p>
+            <div style="margin-top: 70px">
+              <img src="../assets/images/Gift Box.png" alt="gift-box" />
+            </div>
+          </div>
+          <hr class="d-lg-none" style="margin-top: 54px" />
+          <div class="col-lg-5 mob-view-spacing">
+            <div class="card-wrapper">
+              <h3 style="font-size: 22px; font-weight: 600">Need Help?</h3>
+              <p>
+                Get answers to your questions in our
+                <b><a href="" class="text-dark"> Help Center.</a></b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="./assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="./assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/custom-select.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

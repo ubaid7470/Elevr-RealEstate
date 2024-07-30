@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+    <title>Elevr - Personal Information</title>
+  </head>
+  <body>
+    <!-- Verify/Add CNIC Model  -->
+    <div
+      class="modal fade"
+      id="addCNICModal"
+      tabindex="-1"
+      aria-labelledby="addCNICLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">Let’s add your CNIC</h3>
+          <p class="modal-text">
+            We’ll need you to add an official government ID. This step helps
+            make sure you’re really you.
+          </p>
+          <div class="modal-body">
+            <div>
+              <a href="">Upload Front</a>
+            </div>
+            <div>
+              <a href="">Upload Back</a>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#cnicUploadedModal"
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- CNIC Uploaded Model  -->
+    <div
+      class="modal fade"
+      id="cnicUploadedModal"
+      tabindex="-1"
+      aria-labelledby="cnicUploadedModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <h3 style="font-size: 30px; font-weight: 600">CNIC Verification</h3>
+
+          <div class="modal-body text-center">
+            <img
+              src="../assets/images/round-check.png"
+              height="100"
+              width="100"
+              alt=""
+            />
+            <h3 style="font-size: 25px; font-weight: 600; margin-top: 25px">
+              Upload Successful
+            </h3>
+            <p class="modal-text" style="margin-top: 12px">
+              We’ll need you to add an official government ID. This step helps
+              make sure you’re really you.
+            </p>
+          </div>
+          <button type="button" class="btn btn-primary">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- Personal Information Section -->
+    <section>
+      <div class="container">
+        <h1 class="new-listing-heading primary-hd">Personal Information</h1>
+        <div class="row">
+          <div class="col-lg-7">
+            <form>
+              <h3 style="font-size: 35px; font-weight: 600">Full Name</h3>
+              <p style="font-size: 18px">
+                Name should be same as on your government ID, passport or any
+                legal document.
+              </p>
+              <div class="col-lg-8 mt-2">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="firstName"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lastName"
+                  placeholder="Last Name"
+                />
+              </div>
+
+              <h3 style="font-size: 35px; font-weight: 600; margin-top: 30px">
+                Email Address
+              </h3>
+              <p style="font-size: 18px">
+                Use an email address you always has access to
+              </p>
+              <div class="col-lg-8 mt-4" style="position: relative">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="email"
+                  placeholder="Email"
+                />
+                <img
+                  style="position: absolute; top: 30%; right: 15px"
+                  src="../assets/icons/round-check-small.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newEmail"
+                  placeholder="Add new email"
+                />
+              </div>
+
+              <h3 style="font-size: 35px; font-weight: 600; margin-top: 30px">
+                Phone Number
+              </h3>
+              <p style="font-size: 18px">
+                Contact Number (for confirmed guests & Evelr to get in touch).
+                You can add other numbers & choose how they are use.
+              </p>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phoneNumber"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="col-lg-8 mt-4" style="position: relative">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="newPhoneNumber"
+                  placeholder="Add a new phone number"
+                />
+                <img
+                  style="position: absolute; top: 30%; right: 15px"
+                  src="../assets/icons/round-check-small.png"
+                  alt=""
+                />
+              </div>
+
+              <h3 style="font-size: 35px; font-weight: 600; margin-top: 30px">
+                CNIC Verification
+              </h3>
+              <p style="font-size: 18px">
+                Stops fraud, secures transactions, ensures eligibility, and
+                maintains safety.
+              </p>
+              <div class="col-lg-8 mt-4" style="position: relative">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="CNICVerification"
+                  placeholder="CNIC Verification"
+                />
+                <img
+                  style="position: absolute; top: 30%; right: 15px"
+                  src="../assets/icons/round-cross.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <a
+                  class="primary-button"
+                  style="padding: 15px 0 !important; width: 100%"
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addCNICModal"
+                  >Verify your CNIC
+                </a>
+              </div>
+
+              <h3 style="font-size: 35px; font-weight: 600; margin-top: 30px">
+                Address
+              </h3>
+              <p style="font-size: 18px">
+                Current address should be same as on your government ID,
+                passport or any legal document.
+              </p>
+
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="AddressLine1"
+                  placeholder="Address Line 1"
+                />
+              </div>
+
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="AddressLine2"
+                  placeholder="Address Line 2 (if applicable)"
+                />
+              </div>
+
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="AddressLine3"
+                  placeholder="Address Line 3 (if applicable)"
+                />
+              </div>
+
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="AddressLine1"
+                  placeholder="Address Line 1"
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <div class="select-wrapper">
+                  <select id="countrySelect" class="form-select select-input">
+                    <option selected disabled>Country</option>
+                    <option value="Pak">Pakistan</option>
+                    <option value="Ind">India</option>
+                    <option value="Ban">Bangladesh</option>
+                  </select>
+                  <span class="custom-arrow"></span>
+                </div>
+              </div>
+
+              <div class="col-lg-8 mt-4">
+                <div id="stateSelect" class="select-wrapper">
+                  <select class="form-select select-input">
+                    <option selected disabled>State/Province</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="Punjba">Punjab</option>
+                    <option value="KPK">KPK</option>
+                  </select>
+                  <span class="custom-arrow"></span>
+                </div>
+              </div>
+
+              <div class="col-lg-8 mt-4">
+                <div class="select-wrapper">
+                  <select id="citySelect" class="form-select select-input">
+                    <option selected disabled>City</option>
+                    <option value="Karachi">Karachi</option>
+                    <option value="Rawalpindi">Rawalpindi</option>
+                    <option value="Lahore">Lahore</option>
+                  </select>
+                  <span class="custom-arrow"></span>
+                </div>
+              </div>
+
+              <h3 style="font-size: 35px; font-weight: 600; margin-top: 30px">
+                Emergency Contact
+              </h3>
+              <p style="font-size: 18px">
+                Essential for quick help, vital info when you can't communicate,
+                and immediate support in crises.
+              </p>
+              <h4 style="font-size: 28px; font-weight: 500; margin-top: 20px">
+                Contact 1
+              </h4>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactName"
+                  placeholder="Contact Name"
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="yourRelation"
+                  placeholder="Your Relation"
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="contactNumber"
+                  placeholder="Contact Number"
+                />
+              </div>
+              <div class="col-lg-8 mt-4">
+                <button
+                  class="primary-button"
+                  style="padding: 15px 0 !important; width: 100%"
+                >
+                  Add another contact
+                </button>
+              </div>
+            </form>
+          </div>
+          <hr class="d-lg-none" style="margin-top: 54px" />
+          <div class="col-lg-5 mob-view-spacing">
+            <button
+              class="primary-button"
+              style="padding: 20px 62px !important; float: right"
+            >
+              Update Information
+            </button>
+
+            <div class="card-wrapper" style="margin-top: 90px">
+              <h3 style="font-size: 22px; font-weight: 600">Need Help?</h3>
+              <p>
+                Get answers to your questions in our
+                <b><a href="" class="text-dark"> Help Center.</a></b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer  -->
+    <section class="footer-listing">
+      <div class="container">
+        <hr />
+        <div class="footer-last">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-6 p-2 m-0 text-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../assets/js/custom-select.js"></script>
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/global.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/vendor/bootstrap/bootstrap.min.css"
+    />
+
+    <title>Evelr</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <div class="container">
+        <nav
+          class="navbar navbar-expand-lg bg-color py-3 border-bottom border-black"
+        >
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/eve-logo-cropped.gif" alt="evelr logo" />
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Request to Book Section  -->
+    <section>
+      <div class="container">
+        <h1 class="new-listing-heading primary-hd">Request to book</h1>
+        <div class="row">
+          <div class="col-lg-6 pe-lg-3">
+            <h3 style="font-size: 30px; font-weight: 600">Your Stay</h3>
+            <div
+              class="row align-items-center"
+              style="
+                margin-top: 16px;
+                padding: 22px;
+                box-shadow: var(--bs-box-shadow-all-sides);
+                border-radius: 34px;
+              "
+            >
+              <div class="col-6 col-lg-12 col-xxl-6">
+                <div class="d-flex align-items-center" style="font-size: 19px">
+                  <h5
+                    style="
+                      font-size: 18px !important;
+                      font-weight: var(--bs-font-weight-primary);
+                      margin: 0;
+                      margin-right: 24px;
+                    "
+                  >
+                    Dates
+                  </h5>
+                  <span>12-12-2023</span>&nbsp;-&nbsp;<span>14-12-2023</span>
+                </div>
+              </div>
+
+              <div class="col-6 col-lg-12 col-xxl-6">
+                <div class="d-flex align-items-center">
+                  <h5
+                    style="
+                      font-size: 18px !important;
+                      font-weight: var(--bs-font-weight-primary);
+                      margin: 0;
+                      margin-right: 24px;
+                    "
+                  >
+                    Guests
+                  </h5>
+                  <span>3 Adults</span>,<span> 2 Kids</span>
+                </div>
+              </div>
+            </div>
+            <hr style="margin-top: 54px" />
+
+            <h3
+              style="
+                font-size: 30px;
+                font-weight: 600;
+                margin-top: 40px;
+                margin-bottom: 16px;
+              "
+            >
+              Pay With
+            </h3>
+
+            <form action="">
+              <div class="mb-4">
+                <select class="form-select" style="width: 100%">
+                  <option selected disabled>Credit/Debit Card</option>
+                  <option value="$">Dollar ($)</option>
+                  <option value="Pkr">Pakistani Rupee</option>
+                  <option value="Inr">Indian Rupee</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  style="background: none"
+                  id="card_number"
+                  placeholder="Card Number"
+                />
+              </div>
+              <div class="row">
+                <div class="col-6 mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="background: none"
+                    id="expiration_date"
+                    placeholder="Expiration Date"
+                  />
+                </div>
+                <div class="col-6 mb-4">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="background: none"
+                    id="cvv"
+                    placeholder="CVV"
+                  />
+                </div>
+              </div>
+              <h3
+                style="font-size: 30px; font-weight: 600; margin-bottom: 16px"
+              >
+                Billing address
+              </h3>
+
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  style="background: none"
+                  id="street_address"
+                  placeholder="Street Address"
+                />
+              </div>
+              <div class="mb-4">
+                <input
+                  type="text"
+                  class="form-control"
+                  style="background: none"
+                  id="spt_number"
+                  placeholder="Apt or Suite Number"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  style="background: none"
+                  id="city"
+                  placeholder="City"
+                />
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="background: none"
+                    id="state"
+                    placeholder="State"
+                  />
+                </div>
+                <div class="col-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    style="background: none"
+                    id="zip_code"
+                    placeholder="Zip code"
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <select class="form-select" style="width: 100%">
+                  <option selected disabled>Country</option>
+                  <option value="$">Dollar ($)</option>
+                  <option value="Pkr">Pakistani Rupee</option>
+                  <option value="Inr">Indian Rupee</option>
+                </select>
+              </div>
+            </form>
+            <hr style="margin-top: 40px" />
+            <h3 style="font-size: 30px; font-weight: 600; margin-top: 30px">
+              Cancellation Policy
+            </h3>
+            <p style="font-size: 20px">
+              Full refund if cancellation 1 week before check-in and Partial
+              Refund if cancel 72 hours before check-in.
+            </p>
+
+            <h3 style="font-size: 30px; font-weight: 600; margin-top: 40px">
+              Rules & Regulations
+            </h3>
+            <p style="font-size: 20px">
+              We ask every guests to follow a few simple things.
+            </p>
+
+            <ol style="font-size: 20px; list-style: disc">
+              <li>Follow the house rules</li>
+              <li>Treat this house as yours</li>
+            </ol>
+
+            <hr style="margin-top: 40px" />
+
+            <p style="font-size: 15px; margin-top: 30px">
+              By selecting the button below, I agree to the
+              <span style="font-weight: 600">
+                Terms & Conditions, Privacy Policy
+              </span>
+              and that can landlord can
+              <span style="font-weight: 600"> charge my payment method </span>
+              for any damage.
+            </p>
+
+            <div class="mb-3">
+              <a
+                href="./booking-confirmation.html"
+                type="button"
+                class="primary-button"
+                style="padding: 25px 0; border-radius: 12px; margin-top: 40px"
+              >
+                Confirm and Pay
+              </a>
+            </div>
+          </div>
+          <hr class="d-lg-none" style="margin-top: 54px" />
+          <div
+            class="col-lg-6 mob-view-spacing ps-lg-3"
+            style="margin-top: 40px"
+          >
+            <div
+              class="card-wrapper"
+              style="
+                box-shadow: var(--bs-box-shadow-all-sides);
+                border: 1px solid transparent;
+              "
+            >
+              <div class="row align-items-center">
+                <div class="col-6">
+                  <img
+                    src="../assets/images/cover.png"
+                    style="
+                      height: 141px;
+                      width: 100%;
+                      object-fit: cover;
+                      border-radius: 10px;
+                    "
+                    alt="Apartment picture"
+                  />
+                </div>
+                <div class="col-6">
+                  <h3 style="font-size: 18px; font-weight: 600">Apartment</h3>
+                  <h3 style="font-size: 20px; font-weight: 600">
+                    Salam Tower Apartment
+                  </h3>
+                  <span style="font-size: 12px">* 4.8 1k+ reviews</span>
+                </div>
+              </div>
+              <h3 style="font-size: 22px; font-weight: 600; margin-top: 30px">
+                Bill Summary
+              </h3>
+              <div style="font-size: 18">
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Per Night Rate</span>
+                  <span style="font-weight: 600">PKR 5,000</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Government Tax</span>
+                  <span style="font-weight: 600">PKR 750</span>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center"
+                  style="margin-top: 16px"
+                >
+                  <span>Fees</span>
+                  <span style="font-weight: 600">PKR 50</span>
+                </div>
+                <hr />
+              </div>
+              <div
+                class="d-flex justify-content-between align-items-center"
+                style="font-size: 20px"
+              >
+                <span style="font-weight: 500">Sub Total</span>
+                <span style="font-weight: 600">PKR 5,800</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style="margin-top: 54px" />
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer style="margin-top: 52px">
+      <div class="container">
+        <div class="footer">
+          <div class="row">
+            <div class="col-xl-4 col-lg-3 col-md-6 col-12">
+              <h5>Support</h5>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Get help with a safety issue</a></li>
+                <li><a href="#">Anti-discrimination</a></li>
+                <li><a href="#">Disability support</a></li>
+                <li><a href="#">Cancellation options</a></li>
+                <li><a href="#">Report neighborhood concern</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+              <h5>Hosting</h5>
+              <ul>
+                <li><a href="#">List your home</a></li>
+                <li><a href="#">Hosting Resources</a></li>
+                <li><a href="#">Community Forum</a></li>
+                <li><a href="#">Hosting responsibly</a></li>
+                <li><a href="#">Evelr-friendly Apartments</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Evelr</h5>
+              <ul>
+                <li><a href="#">News Room</a></li>
+                <li><a href="#">New Features</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Investors</a></li>
+                <li><a href="#">Gift Cards</a></li>
+                <li><a href="#">Emergency Stays</a></li>
+              </ul>
+            </div>
+            <hr class="d-lg-none d-md-none" />
+            <div class="col-xl-2 col-lg-3 col-md-6 col-12 mt-md-5 mt-lg-0">
+              <h5>Get the app</h5>
+              <a href="#">
+                <img
+                  class="footer-app-store"
+                  src="../assets/images/app-store.png"
+              /></a>
+              <br />
+              <a href="#">
+                <img
+                  class="footer-play-store"
+                  src="../assets/images/google-play.png"
+              /></a>
+            </div>
+          </div>
+          <hr />
+          <div class="footer-last">
+            <div
+              class="row align-items-center justify-content-center justify-content-md-between"
+            >
+              <div class="col-md-6 p-2 m-0">
+                <p class="m-0">© 2024 Evelr Corporation. All rights reserved</p>
+              </div>
+              <div class="col-md-6 p-2 m-0 text-md-end">
+                <a href="">Terms & Condition</a>
+                <a class="m-lg-3" href="">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/custom.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+  </body>
+</html>
